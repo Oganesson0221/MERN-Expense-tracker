@@ -11,7 +11,7 @@ const app = express();
 //! Connect to mongodb
 mongoose
   .connect(
-    "mongodb+srv://rishikamehta2004:rishu2004@cluster0.1yrcnpc.mongodb.net/mern-expenses"
+    "mongodb+srv://**********:********@cluster0.1yrcnpc.mongodb.net/************"
   )
   .then(() => console.log("DB connected"))
   .catch((e) => console.log(e));
