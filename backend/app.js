@@ -1,4 +1,5 @@
 const express = require("express");
+require("dotenv").config();
 const mongoose = require("mongoose");
 const userRouter = require("./routes/userRouter");
 const cors = require("cors");
@@ -10,11 +11,9 @@ const app = express();
 
 //! Connect to mongodb
 mongoose
-  .connect(
-    "mongodb+srv://**********:********@cluster0.1yrcnpc.mongodb.net/************"
-  )
+  .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("DB connected"))
-  .catch((e) => console.log(e));
+  .catch((e) => console.log("DB connection error:", e));
 
 //! Cors configuration
 
